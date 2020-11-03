@@ -9,9 +9,7 @@ function setup() {
 car.velocityX= speed;
 
 wall.shapeColor=(80,80,80);
-
-//if(car.isTouching(wall));
-//car.velocityX=0;
+}
 
 
 
@@ -20,15 +18,15 @@ function draw() {
   if(wall.x-car.x < (car.width+wall.width)/2){
     car.velocityX=0;
     var deformation=0.5 * weight * speed *speed/22500;
-    if(car.isTouching(wall) && deformation>180)
+    if( deformation>180)
     {
       car.shapeColor="red";
     }
-    if(car.isTouching(wall) && deformation<180 && deformation>100)
+    if(deformation<180 && deformation>100)
     {
         car.shapeColor="yellow";
     }
-    if(car.isTouching(wall) && deformation<100){
+    if(deformation<100){
     car.shapeColor="green";
     }
   
